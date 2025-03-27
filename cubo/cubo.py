@@ -177,10 +177,11 @@ def create(
         )
 
         # Rename the coords to match stackstac names, also rearrange
+        # only rename 
         cube = (
             cube.rename(Y="y", X="x")
-            .to_array("band")
-            .transpose("time", "band", "y", "x")
+            #.to_array("band")
+            #.transpose("time", "band", "y", "x")
         )
 
         # Delete all attributes
@@ -263,6 +264,6 @@ def create(
     )
 
     # New name
-    cube.name = collection
+    #cube.name = collection
 
     return cube
